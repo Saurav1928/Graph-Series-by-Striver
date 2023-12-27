@@ -82,14 +82,14 @@ vector<int> bfsOfGraph(int n, vector<int> adjList[])
 
 // for BFS -> TC= O(v)+O(Total Degree) ; SC= O(v);
 
-void DFS(int n, int s, vector<vector<int>> adj, vector<bool> &vis, vector<int> &ans)
+void DFS(int n, int s, vector<vector<int>> adjList, vector<bool> &vis, vector<int> &ans)
 {
     if (vis[s] == true)
         return;
     vis[s] = true;
     ans.push_back(s);
-    for (auto curr : adj[s])
-        DFS(n, curr, adj, vis, ans);
+    for (auto curr : adjList[s])
+        DFS(n, curr, adjList, vis, ans);
     return;
 }
 int main()
